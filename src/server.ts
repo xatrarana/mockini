@@ -54,8 +54,8 @@ export default function startServer(configPath: string, portOverride?: number) {
                         "title": "mockini",
                         "version": "1.0.0",
                         "description": "Mock REST API server from a JSON config",
-                        "usage": "https://github.com/xatrarana/mockini/docs/usage.md",
-                        "docs": "https://github.com/xatrarana/mockini/docs",
+                        "usage": "https://github.com/xatrarana/mockini/tree/main/docs/usage.md",
+                        "docs": "https://github.com/xatrarana/mockini/tree/main/docs",
                         "status": "running",
                         "port": portOverride ?? config.port ?? 3000,
                         "routes": registeredRoutes
