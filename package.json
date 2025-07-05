@@ -1,12 +1,53 @@
 {
   "name": "mockini",
-  "module": "index.ts",
+  "version": "1.0.0",
+  "description": "Mock REST API server from a JSON config",
+  "main": "dist/src/index.js",
+  "bin": {
+    "mockini": "dist/bin/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/bin/index.js start",
+    "init": "node dist/bin/index.js init"
+  },
   "type": "module",
   "private": true,
+  "author": "Chhatra Rana <mail.chhatrarana@gmail.com> (https://github.com/xatrarana)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xatrarana/mockini.git"
+  },
+  "homepage": "https://github.com/xatrarana/mockini#readme",
+  "bugs": {
+    "url": "https://github.com/xatrarana/mockini/issues"
+  },
+  "keywords": [
+    "mock",
+    "mock-server",
+    "cli",
+    "rest",
+    "api",
+    "mock-api",
+    "json",
+    "typescript"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
