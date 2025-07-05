@@ -10,10 +10,13 @@
     "build": "tsc",
     "start": "node dist/bin/index.js start",
     "init": "node dist/bin/index.js init",
-    "prepublishOnly": "npm run build"
-
+    "prepublishOnly": "npm run build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "type": "commonjs",
+  "type": "module",
   "author": "Chhatra Rana <mail.chhatrarana@gmail.com> (https://github.com/xatrarana)",
   "repository": {
     "type": "git",
@@ -46,8 +49,15 @@
     "@types/bun": "latest",
     "@types/express": "^5.0.3",
     "@types/node": "^24.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-import": "^2.32.0",
+    "prettier": "^3.6.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1"
   },
   "peerDependencies": {
     "typescript": "^5"

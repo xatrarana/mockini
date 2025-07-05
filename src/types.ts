@@ -1,9 +1,8 @@
 // src/types.ts or inline in init.ts/server.ts
 
-
 export type Method = 'ALL' | 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | 'HEAD';
 
-export type LowercaseMethod = Lowercase<Method>; 
+export type LowercaseMethod = Lowercase<Method>;
 
 export type Route = {
   method: Method;
@@ -16,4 +15,3 @@ export type MockiniConfig = {
   port: number;
   routes: Route[];
 };
-

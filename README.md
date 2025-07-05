@@ -52,6 +52,7 @@ npx mockini start
 
 By default, it uses `./mockini.config.json`.  
 You can override the path with:
+
 ```bash
 npx mockini start --config ./myconfig.json
 ```
@@ -68,10 +69,10 @@ mockini start
 
 ## 🧩 CLI Commands
 
-| Command           | Description                                |
-|------------------|--------------------------------------------|
-| `mockini init`   | Generate a default mock config file         |
-| `mockini start`  | Start mock server from config file          |
+| Command         | Description                         |
+| --------------- | ----------------------------------- |
+| `mockini init`  | Generate a default mock config file |
+| `mockini start` | Start mock server from config file  |
 
 ---
 
@@ -98,5 +99,4 @@ mockini/
 
 ## 📄 License
 
-MIT © 2025 Chhatra Rana 
-
+MIT © 2025 Chhatra Rana

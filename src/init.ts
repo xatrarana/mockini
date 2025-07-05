@@ -1,5 +1,6 @@
-import { writeFileSync, existsSync } from "node:fs";
-import type { MockiniConfig } from "./types";
+import { writeFileSync, existsSync } from 'node:fs';
+
+import type { MockiniConfig } from './types';
 
 /**
  * Default configuration used when initializing mockini.
@@ -7,16 +8,16 @@ import type { MockiniConfig } from "./types";
  */
 
 const defaultConfig: MockiniConfig = {
-    port: 3000,
-    routes: [
-        {
-            method: 'GET',
-            path: '/hello',
-            status: 200,
-            response: { message: 'Hello, world!' }
-        }
-    ]
-}
+  port: 3000,
+  routes: [
+    {
+      method: 'GET',
+      path: '/hello',
+      status: 200,
+      response: { message: 'Hello, world!' },
+    },
+  ],
+};
 
 /**
  * Creates a default mockini.config.json file at the specified path.
@@ -27,11 +28,11 @@ const defaultConfig: MockiniConfig = {
  */
 
 export function initConfig(path: string) {
-    if (existsSync(path)) {
-        console.warn(`\t ⚠️ File ${path} already exists. Aborting.`);
-        return;
-    }
+  if (existsSync(path)) {
+    console.warn(`\t ⚠️ File ${path} already exists. Aborting.`);
+    return;
+  }
 
-    writeFileSync(path, JSON.stringify(defaultConfig, null, 2));
-    console.log(`\t ✅ mockini config created at ${path}`)
+  writeFileSync(path, JSON.stringify(defaultConfig, null, 2));
+  console.log(`\t ✅ mockini config created at ${path}`);
 }

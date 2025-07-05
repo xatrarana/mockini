@@ -104,6 +104,7 @@ curl http://localhost:3000/hello
 ## 🔧 CLI Commands
 
 ### Initialize Project
+
 ```bash
 # Create default config file
 mockini init
@@ -113,6 +114,7 @@ npx mockini init
 ```
 
 ### Start Server
+
 ```bash
 # Start with default config (mockini.config.json)
 mockini start
@@ -319,11 +321,11 @@ Structure your routes logically:
     // User management
     { "method": "GET", "path": "/api/users", "response": {...} },
     { "method": "POST", "path": "/api/users", "response": {...} },
-    
+
     // Product catalog
     { "method": "GET", "path": "/api/products", "response": {...} },
     { "method": "GET", "path": "/api/products/1", "response": {...} },
-    
+
     // Orders
     { "method": "GET", "path": "/api/orders", "response": {...} },
     { "method": "POST", "path": "/api/orders", "response": {...} }
@@ -476,6 +478,7 @@ mockini
 ### Port Already in Use
 
 If you get a port error, either:
+
 1. Change the port in your config file
 2. Kill the process using the port
 3. Use a different port: `mockini --port 3001`
@@ -483,6 +486,7 @@ If you get a port error, either:
 ### Invalid JSON
 
 Ensure your configuration file is valid JSON:
+
 - Use double quotes for strings
 - No trailing commas
 - Proper nesting structure
@@ -490,6 +494,7 @@ Ensure your configuration file is valid JSON:
 ### Route Not Found
 
 Check that your route path matches exactly, including:
+
 - Leading slash (/)
 - Correct HTTP method
 - Case sensitivity
