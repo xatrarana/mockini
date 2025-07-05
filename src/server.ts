@@ -20,6 +20,7 @@ const validMethods: LowercaseMethod[] = ['get', 'post', 'put', 'delete', 'patch'
  */
 
 export default function startServer(configPath: string, portOverride?: number) {
+    const registeredRoutes: { method: string; path: string }[] = [];
 
     try {
         const raw = readFileOrThrow(configPath);
@@ -37,12 +38,31 @@ export default function startServer(configPath: string, portOverride?: number) {
             } else {
                 effectiveMethod = method;
             }
-
+            registeredRoutes.push({
+                method: effectiveMethod.toUpperCase(),
+                path: route.path
+            });
             (app[effectiveMethod] as express.IRouterMatcher<Application>)(route.path,
                 (_req: Request, res: Response) => {
                     res.status(route.status ?? 200).json(route.response);
                 });
+            // Add default homepage
 
+            app.get('/', (_req: Request, res: Response) => {
+                res.json(
+                    {
+                        "title": "mockini",
+                        "version": "1.0.0",
+                        "description": "Mock REST API server from a JSON config",
+                        "usage": "https://github.com/xatrarana/mockini/docs/usage.md",
+                        "docs": "https://github.com/xatrarana/mockini/docs",
+                        "status": "running",
+                        "port": portOverride ?? config.port ?? 3000,
+                        "routes": registeredRoutes
+                    }
+
+                );
+            });
 
         })
 
