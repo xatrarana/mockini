@@ -4,6 +4,7 @@ import { Command } from "commander";
 import { initConfig } from "../src/init";
 import path from 'path';
 import { readFileOrThrow } from "../src/lib/utils";
+import startServer from "../src/server";
 
 
 const program = new Command();
@@ -19,7 +20,16 @@ program
         const configPath = path.join(process.cwd(), 'mockini.config.json');
         initConfig(configPath);
     });
-
+program
+    .command('start')
+    .description('Start mock server')
+    .option('-c, --config <path>', 'Path to config file (default: ./mockini.config.json')
+    .option('-p, --port <port>', 'Override default port')
+    .action((options) => {
+        const configPath = options.config || 'mockini.config.json';
+        const portOverride = options.port ? parseInt(options.port) : undefined;
+        startServer(configPath, portOverride);
+    });
 program
     .command('validate')
     .description('Validate config file structure and routes')
