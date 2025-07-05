@@ -1,0 +1,40 @@
+{
+  "port": 3000,
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/auth/login",
+      "response": {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+        "user": {
+          "id": 1,
+          "email": "user@example.com",
+          "name": "John Doe"
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/auth/register",
+      "status": 201,
+      "response": {
+        "message": "User created successfully",
+        "user": {
+          "id": 2,
+          "email": "newuser@example.com",
+          "name": "Jane Smith"
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/auth/profile",
+      "response": {
+        "id": 1,
+        "email": "user@example.com",
+        "name": "John Doe",
+        "role": "user"
+      }
+    }
+  ]
+}
